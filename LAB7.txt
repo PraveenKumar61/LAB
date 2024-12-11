@@ -1,0 +1,85 @@
+Problem statement 1
+
+●  Write a Java program to create a class called Shape with a method called
+
+getArea().
+
+●  Create a subclass called Circle and create a constructor that takes the value
+
+of radius(int) as input parameter.
+
+●  Override the getArea() method.
+
+●  Create a class called square that takes an attribute length. Create a constructor that takes length as input.
+
+●  Override the getArea() method.
+
+●  Create a subclass of Shape called Rectangle that takes width and height as input to the constructor.
+
+●  Override the getArea() method to calculate the area of a rectangle.
+
+Instantiate and call getArea() method
+
+prog:
+
+class Shape {
+	public double getArea() {
+		 return 0.0;
+	}
+}
+class Circle extends Shape
+{
+	private int radius;
+
+	public Circle(int radius)
+	{
+		this.radius=radius; 	
+	}
+	public double getArea()
+	{
+		 return (3.14*radius*radius);
+	}
+}
+class Square 
+{
+	private int length;
+	public Square(int length)
+	{
+		this.length=length;
+	}
+	public double getArea() {
+		return length*length;
+		
+	}
+}
+class Rectangle extends Shape
+{
+	private int width,height;
+	Rectangle(int width,int height)
+	{
+		this.width=width;
+		this.height=height;
+	}
+	public double getArea()
+	{
+		return width*height;
+		
+	}
+}
+public class Main {
+
+	public static void main(String[] args) {
+		Circle c=new Circle(2);
+		Square s=new Square(4);
+		Rectangle r=new Rectangle(5,10);
+		System.out.println("Area of Circle : "+c.getArea());
+		System.out.println("Area of Square : "+s.getArea());
+		System.out.println("Area of Rectangle : "+r.getArea());
+	}
+
+}
+
+sample output:
+Area of Circle : 12.56
+Area of Square : 16.0
+Area of Rectangle : 50.0
