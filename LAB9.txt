@@ -1,0 +1,49 @@
+Q."Write a Java program to show how aggregation works in Java."
+
+class Book {
+    private String title;
+    private String author;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    public String getDetails() {
+        return title;
+    }
+}
+
+class Library {
+    private String name;
+    private Book[] books; 
+
+    public Library(String name, Book[] books) {
+        this.name = name;
+        this.books = books;
+    }
+
+    public void displayLibraryDetails() {
+        System.out.println("Library Name: " + name);
+        System.out.println("Books in the library:");
+        for (Book book : books) {
+            System.out.println(book.getDetails());
+        }
+    }
+}
+
+public class AggregationExample {
+    public static void main(String[] args) {
+       
+        Book book1 = new Book("The Great Gatsby", "F. Scott Fitzgerald");
+        Book book2 = new Book("1984", "George Orwell");
+        Book book3 = new Book("To Kill a Mockingbird", "Harper Lee");
+
+        Book[] books = {book1, book2, book3};
+
+        Library library = new Library("City Library", books);
+
+        
+        library.displayLibraryDetails();
+    }
+}
