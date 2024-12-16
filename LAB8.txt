@@ -1,0 +1,97 @@
+Q."Write a Java program to show how to define and implement an interface."
+
+interface Movie {
+    String getTitle();
+    String getDirector();
+    int getDuration(); 
+}
+
+class HorrorMovie implements Movie {
+    private String title;
+    private String director;
+    private int duration;  
+
+    public HorrorMovie(String title, String director, int duration) {
+        this.title = title;
+        this.director = director;
+        this.duration = duration;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void displayActionScene() {
+        System.out.println("Displaying a fear scene!");
+    }
+}
+
+class ComedyMovie implements Movie {
+    private String title;
+    private String director;
+    private int duration;  
+    
+    public ComedyMovie(String title, String director, int duration) {
+        this.title = title;
+        this.director = director;
+        this.duration = duration;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void displayComedyScene() {
+        System.out.println("Displaying a jail comedy scene!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+    
+        Movie horrorMovie = new HorrorMovie("Masooda", "Sai kiran", 140);
+        Movie comedyMovie = new ComedyMovie("Jathiratnalu", "Anudeep KV", 130);
+
+        System.out.println("Horror Movie:");
+        System.out.println("Title: " + horrorMovie.getTitle());
+        System.out.println("Director: " + horrorMovie.getDirector());
+        System.out.println("Duration: " + horrorMovie.getDuration() + " minutes");
+        ((HorrorMovie) horrorMovie).displayActionScene();  
+
+        System.out.println("\nComedy Movie:");
+        System.out.println("Title: " + comedyMovie.getTitle());
+        System.out.println("Director: " + comedyMovie.getDirector());
+        System.out.println("Duration: " + comedyMovie.getDuration() + " minutes");
+        ((ComedyMovie) comedyMovie).displayComedyScene();  
+    }
+}
+
+sample output:
+
+Horror Movie:
+Title: Masooda
+Director: Sai kiran
+Duration: 140 minutes
+Displaying a fear scene!
+
+Comedy Movie:
+Title: Jathiratnalu
+Director: Anudeep KV
+Duration: 130 minutes
+Displaying a jail comedy scene!
