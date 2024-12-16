@@ -1,0 +1,52 @@
+Q. Create a base class called vehicle with the following methods *viod start() this method should print "vehicle started" .
+create two subclases of vehicle called car and motorcycle. override the start() method in each subclass to provide a specific
+implementation:
+*car print"car started".
+*motorcycle:print "motorcycle started".
+create a class called Garage with a method named serviceVehicle(Vehicle vehicle) inside this method.call the start()
+method of the provided vehicle onject and print"Vehicle Serviced". 
+in the main class,create instance of car and motorcycle create are instance of Garage class.
+call the serviceVehicle() method of Garage class  with instance of both car and motorcycle.
+
+
+class Vehicle {
+  void start(){
+    System.out.println("vehicle started");
+  }
+}
+class Car extends Vehicle {
+  void start() {
+    System.out.println("car started");
+  }
+}
+class MotorCycle extends Vehicle {
+  void start() {
+    System.out.println("motor cycle started");
+  }
+}
+class Garage {
+  void ServiceVehicle(Vehicle vehicle){
+    vehicle.start();
+    System.out.println("vehicle serviced");
+  }
+}
+public class Main {
+  public static void main(String[] args) {
+    Car c = new Car();
+    MotorCycle m = new MotorCycle();
+    Garage g = new Garage();
+    g.ServiceVehicle(c);
+    g.ServiceVehicle(m);
+  }
+}
+Output:
+
+car started
+vehicle serviced
+motor cycle started
+vehicle serviced
+
+
+
+
+
