@@ -1,0 +1,64 @@
+Q.How would you implement encapsulation in a Java class?
+
+class CricketPlayer {
+    // Private fields
+    private String name;
+    private int runs;
+    
+    // Constructor to initialize player details
+    public CricketPlayer(String name, int runs) {
+        this.name = name;
+        this.runs = runs;
+    }
+
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+
+    // Getter for runs
+    public int getRuns() {
+        return runs;
+    }
+
+    // Setter for runs
+    public void setRuns(int runs) {
+        if (runs >= 0) {
+            this.runs = runs;
+        } else {
+            System.out.println("Runs cannot be negative.");
+        }
+    }
+
+    // Method to display player details
+    public void displayInfo() {
+        System.out.println("Player: " + name);
+        System.out.println("Runs: " + runs);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a CricketPlayer object
+        CricketPlayer player = new CricketPlayer("MSD", 4500);
+
+        // Display player details
+        player.displayInfo();
+
+        // Update player runs using setter
+        player.setRuns(5100);
+        player.displayInfo();
+
+        // Try to set invalid runs
+        player.setRuns(-100);  // Invalid runs
+    }
+}
+
+
+output:
+
+Player: MSD
+Runs: 4500
+Player: MSD
+Runs: 5100
+Runs cannot be negative.
