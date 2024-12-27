@@ -1,0 +1,91 @@
+1.
+
+
+abstract class Shape{  //abstract class
+    abstract double CalculateArea();  //abstract method
+}
+
+//create a subclass for super class shape
+class Circle extends Shape {
+    private double radius;
+    
+    public Circle(double radius){  //constructor
+        this.radius = radius;
+    }
+    double CalculateArea(){
+        return Math.PI*radius*radius;
+    }
+}
+
+//create a rectangle subclass for super class shape
+class Rectangle extends Shape {
+    private double width;
+    private double height;
+    
+    public Rectangle(double width, double height){
+        this.width = width;
+        this.height = height;
+    }
+    double CalculateArea(){
+        return width*height;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+	//object create for circle
+        Circle c = new Circle(5.0);
+	//object create for rectangle
+        Rectangle r = new Rectangle(4.0,6.0);
+        
+        System.out.println("Circle area:"+c.CalculateArea());
+        System.out.println("Rectangle area:"+r.CalculateArea());
+    }
+}
+
+output:
+
+Circle area:78.53981633974483
+Rectangle area:24.0
+
+=== Code Execution Successful ===
+
+
+
+2.
+class Animal {
+    void makeSound(){  //method
+        System.out.println("Animal make a sound");
+    }
+}
+//create a sub class for super class Animal
+class Dog extends Animal {
+    void makeSound(){
+        System.out.println("the dog bark");
+    }
+}
+//create a cat subclass for super class animal
+class Cat extends Animal{
+    void makeSound(){
+        System.out.println("the cat is meow");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+	//object create
+        Animal animal = new Animal();
+        Dog dog = new Dog();
+        Cat cat = new Cat();
+        
+        animal.makeSound();
+        dog.makeSound();
+        cat.makeSound();
+    } 
+}
+
+output:
+
+Animal make a sound
+the dog bark
+the cat is meow
+
+=== Code Execution Successful ===
